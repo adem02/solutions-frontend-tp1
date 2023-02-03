@@ -1,0 +1,26 @@
+{
+  "name": "solutions-frontend-tp1",
+  "version": "1.0.0",
+  "description": "TP module solutions frontend",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adem02/solutions-frontend-tp1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adem02/solutions-frontend-tp1/issues"
+  },
+  "homepage": "https://github.com/adem02/solutions-frontend-tp1#readme",
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}
