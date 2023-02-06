@@ -11,7 +11,7 @@ const PostsList: React.FC<Props> = (props) => {
     return (
         <React.Fragment>
             {
-                props.posts.map(post => (<PostItem key={post.id} userId={post.userId} id={post.id} title={post.title} body={post.body} occurences={getOccurrenceOf('e', post.title)} />))
+                props.posts.map(post => (<PostItem key={post.id} userId={post.userId} id={post.id} title={post.title} body={post.body} occurence={post.occurrence} />))
             }
         </React.Fragment>
     )

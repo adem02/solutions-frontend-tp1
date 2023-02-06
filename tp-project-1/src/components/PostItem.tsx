@@ -5,7 +5,7 @@ type Props = {
     id: number;
     title: string;
     body: string;
-    occurences?: number
+    occurence?: number|string
 }
 
 const PostItem: React.FC<Props> = (props) => {
@@ -15,7 +15,7 @@ const PostItem: React.FC<Props> = (props) => {
             <p>id: {props.id}</p>
             <p>title: {props.title}</p>
             <p>body: {props.body}</p>
-            <p>Occurrences de 'e': {props.occurences}</p>
+            <p>Occurrences de 'e': {props.occurence}</p>
         </div>
     )
 }
