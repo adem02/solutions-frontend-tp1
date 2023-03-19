@@ -1,12 +1,13 @@
 export class Occurrence {
-
+    readonly numbers: number[]
     private result: Map<number, number> = new Map<number, number>();
 
-    constructor(private values: number[]) {
+    constructor(...numbers: number[]) {
+        this.numbers = numbers;
     }
 
     mapOccurrences() {
-        this.values.forEach(value => this.setOccurrence(value));
+        this.numbers.forEach(value => this.setOccurrence(value));
         return this.result;
     }
 
