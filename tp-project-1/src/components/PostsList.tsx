@@ -1,7 +1,6 @@
 import React from 'react'
 import { Post } from '../utils'
 import PostItem from './PostItem'
-import { getOccurrenceOf } from '../services'
 
 type Props = {
     posts: Post[]
