@@ -1,12 +1,9 @@
 import React from 'react'
-import {PostComments} from "../models/PostComments";
-import {Box, Typography, useTheme} from "@mui/material";
-import PostCard from "./PostCard";
+import { PostComments } from "../models/PostComments";
+import { Typography, useTheme } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
-import {tokens} from "../theme";
+import { tokens } from "../theme";
 
 type Props = {
     data: PostComments

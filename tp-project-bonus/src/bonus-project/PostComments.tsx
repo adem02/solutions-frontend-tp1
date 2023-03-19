@@ -1,9 +1,8 @@
 import React from 'react'
-import {Post} from "../models/Post";
-import {Box, Typography} from "@mui/material";
-import PostCard from "./PostCard";
-import {PostComments} from "../models/PostComments";
+import { Box, Typography } from "@mui/material";
+import { PostComments } from "../models/PostComments";
 import CommentsPerPostCard from "./CommentsPerPostCard";
+import { averageCommentsPerPost } from '../utils/averageCommentsPerPost';
 
 type Props = {
     data: PostComments[];
@@ -12,12 +11,14 @@ type Props = {
 const PostCommentsList: React.FC<Props> = (props) => {
     return (
         <React.Fragment>
-            <Typography variant={'h2'}>User's posts</Typography>
-            <Box sx={{height: '50vh', overflow: 'auto'}}>
+            {props.data.length > 0 ? <Box sx={{ height: '50vh', overflow: 'auto', position: 'relative' }}>
+                {<Box sx={{ height: '50px' }}>
+                    <Typography variant="h2" color="text.secondary" align="center">Moyenne de commentaires par post: {averageCommentsPerPost(props.data)}</Typography>
+                </Box>}
                 {
-                    props.data.map((data, index) => <CommentsPerPostCard key={index} data={data}/>)
+                    props.data.map((data, index) => <CommentsPerPostCard key={index} data={data} />)
                 }
-            </Box>
+            </Box> : null}
         </React.Fragment>
     )
 }

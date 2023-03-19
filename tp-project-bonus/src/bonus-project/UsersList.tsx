@@ -1,6 +1,6 @@
 import React from 'react'
 import { tokens } from "../theme";
-import {Typography, useTheme} from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 
 const UsersList = () => {
     const theme = useTheme();

@@ -1,6 +1,11 @@
-import React from 'react'
-import {Box, Typography} from "@mui/material";
-import {Task} from "../models/Task";
+import React from 'react';
+import { Box } from "@mui/material";
+import { Task } from "../models/Task";
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import Checkbox from '@mui/material/Checkbox';
 
 type Props = {
     tasks: Task[]
@@ -9,15 +14,27 @@ type Props = {
 const Tasks: React.FC<Props> = (props) => {
     return (
         <Box>
-            <Typography variant={'h2'}>User's Todos</Typography>
-            {
-                props.tasks.map((task: Task) => (
-                    <div key={task.id}>
-                        <p>Task: {task.title}</p>
-                        <p>Completed ? {`${task.completed}`}</p>
-                    </div>
-                ))
-            }
+            <List dense sx={{ width: '100%' }}>
+                {props.tasks.map((task, index) => {
+                    return (
+                        <ListItem
+                            key={task.id}
+                            secondaryAction={
+                                <Checkbox
+                                    edge="end"
+                                    checked={task.completed}
+                                    color={'success'}
+                                />
+                            }
+                            disablePadding
+                        >
+                            <ListItemButton>
+                                <ListItemText id={String(task.id)} primary={task.title} />
+                            </ListItemButton>
+                        </ListItem>
+                    );
+                })}
+            </List>
         </Box>
     );
 }
